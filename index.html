@@ -698,9 +698,130 @@
                 </div>
             </div>
 
+
+            
             <!-- Task 4 Page -->
             <div id="task4" class="page">
-                <h2>Task 4</h2>
+                
+
+            <h2>Task 4 - Terraform Static Website & EC2 Dev Server</h2>
+
+                <!-- Task Overview Section -->
+                <div class="task-overview">
+                    <div class="overview-card">
+                        <h3>🎯 Activity 1: Static Website on S3 - "ByteWave Solutions"</h3>
+                        <p>Host a static website using AWS S3 bucket via Terraform for ByteWave Solutions to showcase their services.</p>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>🔧 Implementation Steps</h3>
+                        <div class="phases">
+                            <div class="phase">
+                                <h4>Step 1: S3 Bucket Creation</h4>
+                                <p>Create an S3 bucket named <strong>bytewave-website-[your_initials]</strong>.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 2: Enable Static Website Hosting</h4>
+                                <p>Configure the bucket for static hosting with <strong>index.html</strong> as the default file.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 3: Block Public Access Settings</h4>
+                                <p>Use <code>aws_s3_bucket_public_access_block</code> to block all public access settings initially.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 4: Attach Public Read Policy</h4>
+                                <p>Attach a bucket policy to allow public read access to <strong>index.html</strong>.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 5: Upload Index File</h4>
+                                <p>Upload a sample <strong>index.html</strong> file using AWS Console or CLI.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 6: Output Website URL</h4>
+                                <p>Output the static website endpoint URL using Terraform.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>📊 Expected Result</h3>
+                        <ul>
+                            <li>Publicly accessible static website hosted on S3</li>
+                            <li>All Terraform configurations managed via code</li>
+                            <li>Website URL available as Terraform output</li>
+                        </ul>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>🎯 Activity 2: EC2 Dev Server with Python - "CloudNova Inc."</h3>
+                        <p>Provision a development EC2 instance for CloudNova Inc. with essential tools using Terraform.</p>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>🔧 Implementation Steps</h3>
+                        <div class="phases">
+                            <div class="phase">
+                                <h4>Step 1: Launch EC2 Instance</h4>
+                                <p>Launch a <strong>t2.micro</strong> instance in <strong>us-east-1</strong> using Amazon Linux 2 AMI.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 2: Configure Security Group</h4>
+                                <p>Create a Security Group allowing SSH access on port 22.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 3: Install Packages via User Data</h4>
+                                <p>Use <strong>user_data</strong> script to install Python3 and Git automatically at launch.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 4: Output Public IP</h4>
+                                <p>Output the public IP address of the instance using Terraform.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Step 5: (Optional) SSH Verification</h4>
+                                <p>SSH into the instance and verify that Python3 and Git are installed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>📊 Expected Result</h3>
+                        <ul>
+                            <li>EC2 instance running with public IP</li>
+                            <li>Python3 and Git pre-installed via User Data</li>
+                            <li>SSH access enabled through Security Group</li>
+                            <li>Terraform outputs public IP address</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Sections -->
+                <div class="image-section">
+                    <h3>Image 1 (S3 Bucket Creation)</h3>
+                    <div class="image-placeholder">Click to upload image 1</div>
+                    <!-- <textarea class="text-area" placeholder="Write about image 1..."></textarea> -->
+                </div>
+                <div class="image-section">
+                    <h3>Image 2 (Bucket Policy)</h3>
+                    <div class="image-placeholder">Click to upload image 2</div>
+                    <!-- <textarea class="text-area" placeholder="Write about image 2..."></textarea> -->
+                </div>
+                <div class="image-section">
+                    <h3>Image 1 (EC2 Instance Launch)</h3>
+                    <div class="image-placeholder">Click to upload image 3</div>
+                    <!-- <textarea class="text-area" placeholder="Write about image 3..."></textarea> -->
+                </div>
+                <div class="image-section">
+                    <h3>Image 2 (User Data Script Output)</h3>
+                    <div class="image-placeholder">Click to upload image 4</div>
+                    <!-- <textarea class="text-area" placeholder="Write about image 4..."></textarea> -->
+                </div>
+                <div class="image-section">
+                    <h3>Image 3 (SSH Verification)</h3>
+                    <div class="image-placeholder">Click to upload image 5</div>
+                    <!-- <textarea class="text-area" placeholder="Write about image 5..."></textarea> -->
+                </div>
+
+                <!-- <h2>Task 4</h2>
                 <div class="image-section">
                     <h3>Image 1</h3>
                     <div class="image-placeholder">Click to upload image 1</div>
@@ -726,7 +847,7 @@
                     <div class="image-placeholder">Click to upload image 5</div>
                     <textarea class="text-area" placeholder="Write about image 5..."></textarea>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
