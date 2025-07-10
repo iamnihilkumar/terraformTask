@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil Kumar - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .home-content {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .home-content h2 {
+            font-size: 3em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .home-content .reg-number {
+            font-size: 1.5em;
+            color: #7f8c8d;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .home-content p {
+            font-size: 1.3em;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .task-content h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        .task-overview {
+            margin-bottom: 40px;
+        }
+
+        .overview-card {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
+        }
+
+        .overview-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        .overview-card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .overview-card ul {
+            color: #555;
+            padding-left: 20px;
+        }
+
+        .overview-card li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .phases {
+            display: grid;
+            gap: 15px;
+        }
+
+        .phase {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .phase h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .phase p {
+            color: #666;
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        .tech-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+
+        .spec-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #e74c3c;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .step {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .image-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(52, 152, 219, 0.05);
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+        }
+
+        .image-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
+            border: 2px dashed #95a5a6;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .image-placeholder:hover {
+            background: linear-gradient(45deg, #d5dbdb, #a6acaf);
+            border-color: #7f8c8d;
+        }
+
+        .text-area {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #ecf0f1;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        .text-area:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+        }
+
+        .text-area::placeholder {
+            color: #95a5a6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .nav {
+                gap: 10px;
+            }
+
+            .nav-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .home-content h2 {
+                font-size: 2.2em;
+            }
+
+            .image-placeholder {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Academic Task Management System</p>
+            <div class="nav">
+                <button class="nav-btn active" onclick="showPage('home')">Home</button>
+                <button class="nav-btn" onclick="showPage('task1')">Task 1</button>
+                <button class="nav-btn" onclick="showPage('task2')">Task 2</button>
+                <button class="nav-btn" onclick="showPage('task3')">Task 3</button>
+                <button class="nav-btn" onclick="showPage('task4')">Task 4</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Home Page -->
+            <div id="home" class="page active">
+                <div class="home-content">
+                    <h2>Nikhil Kumar</h2>
+                    <div class="reg-number">Registration Number: 12215880</div>
+                    <p>Welcome to my academic portfolio. This website contains my completed tasks and projects. Navigate through the different task pages to view my work and documentation.</p>
+                </div>
+            </div>
+
+            <!-- Task 1 Page -->
+            <div id="task1" class="page">
+                <h2>Task 1 - Terraform Infrastructure Deployment</h2>
+                
+                <!-- Task Overview Section -->
+                <div class="task-overview">
+                    <div class="overview-card">
+                        <h3>🎯 Objective</h3>
+                        <p>Download, install, and configure Terraform to launch a basic EC2 instance on AWS, demonstrating Infrastructure as Code (IaC) capabilities and cloud resource management.</p>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>🔧 Implementation Phases</h3>
+                        <div class="phases">
+                            <div class="phase">
+                                <h4>Phase 1: Setup & Installation</h4>
+                                <p>Download Terraform from HashiCorp, extract to system directory, and configure PATH environment variable for global access.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 2: Environment Configuration</h4>
+                                <p>Verify installation using command line, set up AWS credentials, and prepare the working directory structure.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 3: Infrastructure Code Development</h4>
+                                <p>Create Terraform configuration files with AWS provider settings and EC2 resource definitions including AMI and instance specifications.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 4: Deployment & Testing</h4>
+                                <p>Execute Terraform workflow: initialize, validate, plan, apply, and verify successful EC2 instance deployment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>⚠️ Key Challenges</h3>
+                        <ul>
+                            <li><strong>Environment Setup:</strong> Proper PATH configuration and system variable management</li>
+                            <li><strong>AWS Authentication:</strong> Secure credential management and access key configuration</li>
+                            <li><strong>Resource Configuration:</strong> Correct AMI selection and instance type specification</li>
+                            <li><strong>Network Dependencies:</strong> Understanding VPC, subnet, and security group requirements</li>
+                            <li><strong>State Management:</strong> Terraform state file handling and potential conflicts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>📊 Expected Results</h3>
+                        <ul>
+                            <li>Successful Terraform installation and PATH configuration</li>
+                            <li>Functional AWS provider authentication</li>
+                            <li>Deployed EC2 instance (t2.micro) with Amazon Linux AMI</li>
+                            <li>Proper resource tagging and identification</li>
+                            <li>Demonstration of infrastructure lifecycle management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>🛠️ Technical Specifications</h3>
+                        <div class="tech-specs">
+                            <div class="spec-item">
+                                <strong>Platform:</strong> Windows AMD64
+                            </div>
+                            <div class="spec-item">
+                                <strong>AWS Region:</strong> us-east-1
+                            </div>
+                            <div class="spec-item">
+                                <strong>Instance Type:</strong> t2.micro (Free Tier)
+                            </div>
+                            <div class="spec-item">
+                                <strong>AMI:</strong> ami-05ffe3c48a9991133 (Amazon Linux)
+                            </div>
+                            <div class="spec-item">
+                                <strong>Key Commands:</strong> terraform init, validate, plan, apply, destroy
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
+                <div class="image-section">
+                    <h3>Image 1</h3>
+                    <div class="image-placeholder">Click to upload image 1</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 2</h3>
+                    <div class="image-placeholder">Click to upload image 2</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 3</h3>
+                    <div class="image-placeholder">Click to upload image 3</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 4</h3>
+                    <div class="image-placeholder">Click to upload image 4</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 5</h3>
+                    <div class="image-placeholder">Click to upload image 5</div>
+                </div>
+            </div>
+
+            <!-- Task 2 Page -->
+            <div id="task2" class="page">
+                <h2>Task 2 - Secure Ubuntu EC2 Instance with Advanced Networking</h2>
+                
+                <!-- Task Overview Section -->
+                <div class="task-overview">
+                    <div class="overview-card">
+                        <h3>🎯 Objective</h3>
+                        <p>Launch a secure Ubuntu EC2 instance in AWS with SSH and HTTPS access using the default VPC, latest official Ubuntu AMI, and custom security group configurations for enhanced network security.</p>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>🔧 Implementation Phases</h3>
+                        <div class="phases">
+                            <div class="phase">
+                                <h4>Phase 1: AMI Discovery & Configuration</h4>
+                                <p>Implement dynamic AMI lookup to fetch the latest Ubuntu 22.04 (Jammy) AMI using data sources and filters for official Canonical images.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 2: Network Infrastructure Setup</h4>
+                                <p>Configure default VPC data source and establish security group with proper ingress/egress rules for SSH and HTTPS access.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 3: Security Group Implementation</h4>
+                                <p>Create comprehensive security rules for IPv4/IPv6 traffic, SSH access (port 22), HTTPS access (port 443), and outbound traffic policies.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 4: EC2 Instance Deployment</h4>
+                                <p>Deploy Ubuntu instance with key pair authentication, public IP association, and security group attachment for secure remote access.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>⚠️ Key Challenges</h3>
+                        <ul>
+                            <li><strong>Dynamic AMI Selection:</strong> Implementing data sources to fetch latest Ubuntu AMI automatically</li>
+                            <li><strong>Security Group Configuration:</strong> Properly configuring ingress/egress rules for multiple protocols</li>
+                            <li><strong>SSH Key Management:</strong> Handling key pair variables and secure authentication setup</li>
+                            <li><strong>Network Security:</strong> Balancing accessibility with security best practices</li>
+                            <li><strong>IPv4/IPv6 Dual Stack:</strong> Configuring rules for both IP protocol versions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>📊 Expected Results</h3>
+                        <ul>
+                            <li>Successfully deployed Ubuntu 22.04 EC2 instance with latest AMI</li>
+                            <li>Functional SSH access via port 22 with key pair authentication</li>
+                            <li>Secure HTTPS access configuration on port 443</li>
+                            <li>Properly configured security group with IPv4/IPv6 support</li>
+                            <li>Public IP association for external accessibility</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>🛠️ Technical Specifications</h3>
+                        <div class="tech-specs">
+                            <div class="spec-item">
+                                <strong>Operating System:</strong> Ubuntu 22.04 LTS (Jammy)
+                            </div>
+                            <div class="spec-item">
+                                <strong>AWS Region:</strong> us-east-1
+                            </div>
+                            <div class="spec-item">
+                                <strong>Instance Type:</strong> t2.micro (Free Tier)
+                            </div>
+                            <div class="spec-item">
+                                <strong>AMI Owner:</strong> 099720109477 (Canonical)
+                            </div>
+                            <div class="spec-item">
+                                <strong>Network:</strong> Default VPC with Public IP
+                            </div>
+                            <div class="spec-item">
+                                <strong>Security Ports:</strong> SSH (22), HTTPS (443)
+                            </div>
+                            <div class="spec-item">
+                                <strong>Key Features:</strong> Dynamic AMI lookup, IPv4/IPv6 support
+                            </div>
+                            <div class="spec-item">
+                                <strong>Authentication:</strong> SSH Key Pair (kp1)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-section">
+                    <h3>Image 1</h3>
+                    <div class="image-placeholder">Click to upload image 1</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 2</h3>
+                    <div class="image-placeholder">Click to upload image 2</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 3</h3>
+                    <div class="image-placeholder">Click to upload image 3</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 4</h3>
+                    <div class="image-placeholder">Click to upload image 4</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 5</h3>
+                    <div class="image-placeholder">Click to upload image 5</div>
+                </div>
+            </div>
+
+            <!-- Task 3 Page -->
+            <div id="task3" class="page">
+                <h2>Task 3 - Multi-Service AWS Infrastructure & Vercel Showcase</h2>
+                
+                <!-- Task Overview Section -->
+                <div class="task-overview">
+                    <div class="overview-card">
+                        <h3>🎯 Objective</h3>
+                        <p>Create comprehensive AWS infrastructure across 11 different services using free tier resources, document with screenshots, and develop a professional showcase webpage deployed on Vercel to demonstrate cloud engineering capabilities.</p>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>🔧 Implementation Phases</h3>
+                        <div class="phases">
+                            <div class="phase">
+                                <h4>Phase 1: Core Infrastructure Services</h4>
+                                <p>Deploy foundational AWS services including EC2 (t2.micro), custom VPC with public subnet, Internet Gateway, and EBS volume attachment.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 2: Advanced Services & Databases</h4>
+                                <p>Implement serverless Lambda functions, S3 storage with versioning, RDS MySQL database, and Athena analytics with sample data.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 3: Monitoring & Management</h4>
+                                <p>Configure CloudWatch alarms, enable CloudTrail for API monitoring, and deploy infrastructure using CloudFormation templates.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Phase 4: Modern DevOps & Documentation</h4>
+                                <p>Utilize AWS CDK for infrastructure as code, create comprehensive documentation with screenshots, and deploy showcase on Vercel.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>⚠️ Key Challenges</h3>
+                        <ul>
+                            <li><strong>Multi-Service Integration:</strong> Coordinating 11 different AWS services with proper dependencies</li>
+                            <li><strong>Free Tier Limitations:</strong> Managing resource constraints while maintaining functionality</li>
+                            <li><strong>Infrastructure as Code:</strong> Implementing both CloudFormation and CDK approaches</li>
+                            <li><strong>Monitoring Setup:</strong> Configuring CloudWatch alarms and CloudTrail effectively</li>
+                            <li><strong>Documentation Quality:</strong> Creating professional screenshots and clear presentation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>📊 Expected Results</h3>
+                        <ul>
+                            <li>11 fully functional AWS services deployed and configured</li>
+                            <li>Custom VPC with proper networking and security configurations</li>
+                            <li>Serverless Lambda function with Python Hello World implementation</li>
+                            <li>Comprehensive monitoring with CloudWatch and CloudTrail</li>
+                            <li>Professional Vercel webpage showcasing all implementations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>🛠️ AWS Services Implemented</h3>
+                        <div class="tech-specs">
+                            <div class="spec-item">
+                                <strong>EC2:</strong> t2.micro Amazon Linux 2 instance
+                            </div>
+                            <div class="spec-item">
+                                <strong>VPC:</strong> Custom VPC with public subnet & IGW
+                            </div>
+                            <div class="spec-item">
+                                <strong>Lambda:</strong> Python Hello World function
+                            </div>
+                            <div class="spec-item">
+                                <strong>S3:</strong> Private bucket with versioning
+                            </div>
+                            <div class="spec-item">
+                                <strong>EBS:</strong> 10GB volume attached to EC2
+                            </div>
+                            <div class="spec-item">
+                                <strong>RDS:</strong> db.t2.micro MySQL database
+                            </div>
+                            <div class="spec-item">
+                                <strong>Athena:</strong> Database & table from S3 data
+                            </div>
+                            <div class="spec-item">
+                                <strong>CloudWatch:</strong> CPU utilization alarm >70%
+                            </div>
+                            <div class="spec-item">
+                                <strong>CloudTrail:</strong> API activity monitoring
+                            </div>
+                            <div class="spec-item">
+                                <strong>CloudFormation:</strong> Template-based EC2 deployment
+                            </div>
+                            <div class="spec-item">
+                                <strong>CDK:</strong> TypeScript/Python S3 provisioning
+                            </div>
+                            <div class="spec-item">
+                                <strong>Vercel:</strong> Static site deployment platform
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>🌐 Deployment Architecture</h3>
+                        <div class="phases">
+                            <div class="phase">
+                                <h4>Infrastructure Layer</h4>
+                                <p>Custom VPC with public subnet, Internet Gateway, security groups, and network ACLs for secure communication.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Compute & Storage</h4>
+                                <p>EC2 instances with attached EBS volumes, S3 buckets for object storage, and RDS for relational database management.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Serverless & Analytics</h4>
+                                <p>Lambda functions for serverless computing and Athena for SQL analytics on S3 data lakes.</p>
+                            </div>
+                            <div class="phase">
+                                <h4>Management & Monitoring</h4>
+                                <p>CloudWatch for metrics and alarms, CloudTrail for audit logs, and CloudFormation/CDK for infrastructure automation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-section">
+                    <h3>Image 1</h3>
+                    <div class="image-placeholder">Click to upload image 1</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 2</h3>
+                    <div class="image-placeholder">Click to upload image 2</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 3</h3>
+                    <div class="image-placeholder">Click to upload image 3</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 4</h3>
+                    <div class="image-placeholder">Click to upload image 4</div>
+                </div>
+                <div class="image-section">
+                    <h3>Image 5</h3>
+                    <div class="image-placeholder">Click to upload image 5</div>
+                </div>
+            </div>
+
+            <!-- Task 4 Page -->
+            <div id="task4" class="page">
+                <h2>Task 4</h2>
+                <div class="image-section">
+                    <h3>Image 1</h3>
+                    <div class="image-placeholder">Click to upload image 1</div>
+                    <textarea class="text-area" placeholder="Write about image 1..."></textarea>
+                </div>
+                <div class="image-section">
+                    <h3>Image 2</h3>
+                    <div class="image-placeholder">Click to upload image 2</div>
+                    <textarea class="text-area" placeholder="Write about image 2..."></textarea>
+                </div>
+                <div class="image-section">
+                    <h3>Image 3</h3>
+                    <div class="image-placeholder">Click to upload image 3</div>
+                    <textarea class="text-area" placeholder="Write about image 3..."></textarea>
+                </div>
+                <div class="image-section">
+                    <h3>Image 4</h3>
+                    <div class="image-placeholder">Click to upload image 4</div>
+                    <textarea class="text-area" placeholder="Write about image 4..."></textarea>
+                </div>
+                <div class="image-section">
+                    <h3>Image 5</h3>
+                    <div class="image-placeholder">Click to upload image 5</div>
+                    <textarea class="text-area" placeholder="Write about image 5..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Add click functionality to image placeholders
+        document.addEventListener('DOMContentLoaded', function() {
+            const placeholders = document.querySelectorAll('.image-placeholder');
+            placeholders.forEach(placeholder => {
+                placeholder.addEventListener('click', function() {
+                    alert('Image upload functionality would be implemented here. In a real application, this would open a file picker.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
