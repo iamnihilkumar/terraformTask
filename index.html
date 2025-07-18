@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -250,7 +251,7 @@
         }
 
         .image-placeholder {
-            width: 100%;
+            /* width: 100%;
             height: 300px;
             background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
             border: 2px dashed #95a5a6;
@@ -261,7 +262,20 @@
             font-size: 1.1em;
             color: #7f8c8d;
             margin-bottom: 15px;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; */
+
+
+            width: 100%;
+            /* remove height: 300px; */
+            /* remove the background gradient if you don’t need it */
+            background: none;
+            border: 2px dashed #95a5a6;
+            border-radius: 10px;
+            /* Let the placeholder shrink/grow to its contents: */
+            display: inline-block;
+            /* or block, if you prefer full‑width */
+            /* remove flex centering—image will fill it */
+            padding: 0
         }
 
         .image-placeholder:hover {
@@ -317,12 +331,21 @@
                 font-size: 2.2em;
             }
 
-            .image-placeholder {
-                height: 200px;
+
+            .image-placeholder img {
+                display: block;
+                /* remove inline gaps */
+                width: 100%;
+                /* stretch to container’s width */
+                height: auto;
+                /* preserve aspect ratio */
+                border-radius: 10px;
             }
+
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -343,54 +366,65 @@
                 <div class="home-content">
                     <h2>Nikhil Kumar</h2>
                     <div class="reg-number">Registration Number: 12215880</div>
-                    <p>Welcome to my academic portfolio. This website contains my completed tasks and projects. Navigate through the different task pages to view my work and documentation.</p>
+                    <p>Welcome to my academic portfolio. This website contains my completed tasks and projects. Navigate
+                        through the different task pages to view my work and documentation.</p>
                 </div>
             </div>
 
             <!-- Task 1 Page -->
             <div id="task1" class="page">
                 <h2>Task 1 - Terraform Infrastructure Deployment</h2>
-                
+
                 <!-- Task Overview Section -->
                 <div class="task-overview">
                     <div class="overview-card">
                         <h3>🎯 Objective</h3>
-                        <p>Download, install, and configure Terraform to launch a basic EC2 instance on AWS, demonstrating Infrastructure as Code (IaC) capabilities and cloud resource management.</p>
+                        <p>Download, install, and configure Terraform to launch a basic EC2 instance on AWS,
+                            demonstrating Infrastructure as Code (IaC) capabilities and cloud resource management.</p>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>🔧 Implementation Phases</h3>
                         <div class="phases">
                             <div class="phase">
                                 <h4>Phase 1: Setup & Installation</h4>
-                                <p>Download Terraform from HashiCorp, extract to system directory, and configure PATH environment variable for global access.</p>
+                                <p>Download Terraform from HashiCorp, extract to system directory, and configure PATH
+                                    environment variable for global access.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 2: Environment Configuration</h4>
-                                <p>Verify installation using command line, set up AWS credentials, and prepare the working directory structure.</p>
+                                <p>Verify installation using command line, set up AWS credentials, and prepare the
+                                    working directory structure.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 3: Infrastructure Code Development</h4>
-                                <p>Create Terraform configuration files with AWS provider settings and EC2 resource definitions including AMI and instance specifications.</p>
+                                <p>Create Terraform configuration files with AWS provider settings and EC2 resource
+                                    definitions including AMI and instance specifications.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 4: Deployment & Testing</h4>
-                                <p>Execute Terraform workflow: initialize, validate, plan, apply, and verify successful EC2 instance deployment.</p>
+                                <p>Execute Terraform workflow: initialize, validate, plan, apply, and verify successful
+                                    EC2 instance deployment.</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>⚠️ Key Challenges</h3>
                         <ul>
-                            <li><strong>Environment Setup:</strong> Proper PATH configuration and system variable management</li>
-                            <li><strong>AWS Authentication:</strong> Secure credential management and access key configuration</li>
-                            <li><strong>Resource Configuration:</strong> Correct AMI selection and instance type specification</li>
-                            <li><strong>Network Dependencies:</strong> Understanding VPC, subnet, and security group requirements</li>
-                            <li><strong>State Management:</strong> Terraform state file handling and potential conflicts</li>
+                            <li><strong>Environment Setup:</strong> Proper PATH configuration and system variable
+                                management</li>
+                            <li><strong>AWS Authentication:</strong> Secure credential management and access key
+                                configuration</li>
+                            <li><strong>Resource Configuration:</strong> Correct AMI selection and instance type
+                                specification</li>
+                            <li><strong>Network Dependencies:</strong> Understanding VPC, subnet, and security group
+                                requirements</li>
+                            <li><strong>State Management:</strong> Terraform state file handling and potential conflicts
+                            </li>
                         </ul>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>📊 Expected Results</h3>
                         <ul>
@@ -401,7 +435,7 @@
                             <li>Demonstration of infrastructure lifecycle management</li>
                         </ul>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>🛠️ Technical Specifications</h3>
                         <div class="tech-specs">
@@ -422,76 +456,88 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                 </div>
-                
+
                 <div class="image-section">
                     <h3>Image 1</h3>
-                    <div class="image-placeholder">Click to upload image 1</div>
+                    <div class="image-placeholder">
+                        <img src="images/task1 image1.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
                     <h3>Image 2</h3>
-                    <div class="image-placeholder">Click to upload image 2</div>
+                    <div class="image-placeholder">
+                        <img src="images/task1 image2.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
                     <h3>Image 3</h3>
-                    <div class="image-placeholder">Click to upload image 3</div>
-                </div>
-                <div class="image-section">
-                    <h3>Image 4</h3>
-                    <div class="image-placeholder">Click to upload image 4</div>
-                </div>
-                <div class="image-section">
-                    <h3>Image 5</h3>
-                    <div class="image-placeholder">Click to upload image 5</div>
+                    <div class="image-placeholder">
+                        <img src="images/task1 image3.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
             </div>
 
             <!-- Task 2 Page -->
             <div id="task2" class="page">
                 <h2>Task 2 - Secure Ubuntu EC2 Instance with Advanced Networking</h2>
-                
+
                 <!-- Task Overview Section -->
                 <div class="task-overview">
                     <div class="overview-card">
                         <h3>🎯 Objective</h3>
-                        <p>Launch a secure Ubuntu EC2 instance in AWS with SSH and HTTPS access using the default VPC, latest official Ubuntu AMI, and custom security group configurations for enhanced network security.</p>
+                        <p>Launch a secure Ubuntu EC2 instance in AWS with SSH and HTTPS access using the default VPC,
+                            latest official Ubuntu AMI, and custom security group configurations for enhanced network
+                            security.</p>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>🔧 Implementation Phases</h3>
                         <div class="phases">
                             <div class="phase">
                                 <h4>Phase 1: AMI Discovery & Configuration</h4>
-                                <p>Implement dynamic AMI lookup to fetch the latest Ubuntu 22.04 (Jammy) AMI using data sources and filters for official Canonical images.</p>
+                                <p>Implement dynamic AMI lookup to fetch the latest Ubuntu 22.04 (Jammy) AMI using data
+                                    sources and filters for official Canonical images.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 2: Network Infrastructure Setup</h4>
-                                <p>Configure default VPC data source and establish security group with proper ingress/egress rules for SSH and HTTPS access.</p>
+                                <p>Configure default VPC data source and establish security group with proper
+                                    ingress/egress rules for SSH and HTTPS access.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 3: Security Group Implementation</h4>
-                                <p>Create comprehensive security rules for IPv4/IPv6 traffic, SSH access (port 22), HTTPS access (port 443), and outbound traffic policies.</p>
+                                <p>Create comprehensive security rules for IPv4/IPv6 traffic, SSH access (port 22),
+                                    HTTPS access (port 443), and outbound traffic policies.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 4: EC2 Instance Deployment</h4>
-                                <p>Deploy Ubuntu instance with key pair authentication, public IP association, and security group attachment for secure remote access.</p>
+                                <p>Deploy Ubuntu instance with key pair authentication, public IP association, and
+                                    security group attachment for secure remote access.</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>⚠️ Key Challenges</h3>
                         <ul>
-                            <li><strong>Dynamic AMI Selection:</strong> Implementing data sources to fetch latest Ubuntu AMI automatically</li>
-                            <li><strong>Security Group Configuration:</strong> Properly configuring ingress/egress rules for multiple protocols</li>
-                            <li><strong>SSH Key Management:</strong> Handling key pair variables and secure authentication setup</li>
-                            <li><strong>Network Security:</strong> Balancing accessibility with security best practices</li>
-                            <li><strong>IPv4/IPv6 Dual Stack:</strong> Configuring rules for both IP protocol versions</li>
+                            <li><strong>Dynamic AMI Selection:</strong> Implementing data sources to fetch latest Ubuntu
+                                AMI automatically</li>
+                            <li><strong>Security Group Configuration:</strong> Properly configuring ingress/egress rules
+                                for multiple protocols</li>
+                            <li><strong>SSH Key Management:</strong> Handling key pair variables and secure
+                                authentication setup</li>
+                            <li><strong>Network Security:</strong> Balancing accessibility with security best practices
+                            </li>
+                            <li><strong>IPv4/IPv6 Dual Stack:</strong> Configuring rules for both IP protocol versions
+                            </li>
                         </ul>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>📊 Expected Results</h3>
                         <ul>
@@ -502,7 +548,7 @@
                             <li>Public IP association for external accessibility</li>
                         </ul>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>🛠️ Technical Specifications</h3>
                         <div class="tech-specs">
@@ -533,73 +579,100 @@
                         </div>
                     </div>
                 </div>
-                
+
+
                 <div class="image-section">
                     <h3>Image 1</h3>
-                    <div class="image-placeholder">Click to upload image 1</div>
+                    <div class="image-placeholder">
+                        <img src="images/terra-task2-img1.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
                     <h3>Image 2</h3>
-                    <div class="image-placeholder">Click to upload image 2</div>
+                    <div class="image-placeholder">
+                        <img src="images/terra-task2-img2.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
                     <h3>Image 3</h3>
-                    <div class="image-placeholder">Click to upload image 3</div>
+                    <div class="image-placeholder">
+                        <img src="images/terra-task2-img3.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
                     <h3>Image 4</h3>
-                    <div class="image-placeholder">Click to upload image 4</div>
+                    <div class="image-placeholder">
+                        <img src="images/terra-task2-img4.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
                     <h3>Image 5</h3>
-                    <div class="image-placeholder">Click to upload image 5</div>
+                    <div class="image-placeholder">
+                        <img src="images/terra-task2-img5.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
             </div>
 
             <!-- Task 3 Page -->
             <div id="task3" class="page">
                 <h2>Task 3 - Multi-Service AWS Infrastructure & Vercel Showcase</h2>
-                
+
                 <!-- Task Overview Section -->
                 <div class="task-overview">
                     <div class="overview-card">
                         <h3>🎯 Objective</h3>
-                        <p>Create comprehensive AWS infrastructure across 11 different services using free tier resources, document with screenshots, and develop a professional showcase webpage deployed on Vercel to demonstrate cloud engineering capabilities.</p>
+                        <p>Create comprehensive AWS infrastructure across 11 different services using free tier
+                            resources, document with screenshots, and develop a professional showcase webpage deployed
+                            on Vercel to demonstrate cloud engineering capabilities.</p>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>🔧 Implementation Phases</h3>
                         <div class="phases">
                             <div class="phase">
                                 <h4>Phase 1: Core Infrastructure Services</h4>
-                                <p>Deploy foundational AWS services including EC2 (t2.micro), custom VPC with public subnet, Internet Gateway, and EBS volume attachment.</p>
+                                <p>Deploy foundational AWS services including EC2 (t2.micro), custom VPC with public
+                                    subnet, Internet Gateway, and EBS volume attachment.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 2: Advanced Services & Databases</h4>
-                                <p>Implement serverless Lambda functions, S3 storage with versioning, RDS MySQL database, and Athena analytics with sample data.</p>
+                                <p>Implement serverless Lambda functions, S3 storage with versioning, RDS MySQL
+                                    database, and Athena analytics with sample data.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 3: Monitoring & Management</h4>
-                                <p>Configure CloudWatch alarms, enable CloudTrail for API monitoring, and deploy infrastructure using CloudFormation templates.</p>
+                                <p>Configure CloudWatch alarms, enable CloudTrail for API monitoring, and deploy
+                                    infrastructure using CloudFormation templates.</p>
                             </div>
                             <div class="phase">
                                 <h4>Phase 4: Modern DevOps & Documentation</h4>
-                                <p>Utilize AWS CDK for infrastructure as code, create comprehensive documentation with screenshots, and deploy showcase on Vercel.</p>
+                                <p>Utilize AWS CDK for infrastructure as code, create comprehensive documentation with
+                                    screenshots, and deploy showcase on Vercel.</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>⚠️ Key Challenges</h3>
                         <ul>
-                            <li><strong>Multi-Service Integration:</strong> Coordinating 11 different AWS services with proper dependencies</li>
-                            <li><strong>Free Tier Limitations:</strong> Managing resource constraints while maintaining functionality</li>
-                            <li><strong>Infrastructure as Code:</strong> Implementing both CloudFormation and CDK approaches</li>
-                            <li><strong>Monitoring Setup:</strong> Configuring CloudWatch alarms and CloudTrail effectively</li>
-                            <li><strong>Documentation Quality:</strong> Creating professional screenshots and clear presentation</li>
+                            <li><strong>Multi-Service Integration:</strong> Coordinating 11 different AWS services with
+                                proper dependencies</li>
+                            <li><strong>Free Tier Limitations:</strong> Managing resource constraints while maintaining
+                                functionality</li>
+                            <li><strong>Infrastructure as Code:</strong> Implementing both CloudFormation and CDK
+                                approaches</li>
+                            <li><strong>Monitoring Setup:</strong> Configuring CloudWatch alarms and CloudTrail
+                                effectively</li>
+                            <li><strong>Documentation Quality:</strong> Creating professional screenshots and clear
+                                presentation</li>
                         </ul>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>📊 Expected Results</h3>
                         <ul>
@@ -610,7 +683,7 @@
                             <li>Professional Vercel webpage showcasing all implementations</li>
                         </ul>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>🛠️ AWS Services Implemented</h3>
                         <div class="tech-specs">
@@ -652,65 +725,107 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="overview-card">
                         <h3>🌐 Deployment Architecture</h3>
                         <div class="phases">
                             <div class="phase">
                                 <h4>Infrastructure Layer</h4>
-                                <p>Custom VPC with public subnet, Internet Gateway, security groups, and network ACLs for secure communication.</p>
+                                <p>Custom VPC with public subnet, Internet Gateway, security groups, and network ACLs
+                                    for secure communication.</p>
                             </div>
                             <div class="phase">
                                 <h4>Compute & Storage</h4>
-                                <p>EC2 instances with attached EBS volumes, S3 buckets for object storage, and RDS for relational database management.</p>
+                                <p>EC2 instances with attached EBS volumes, S3 buckets for object storage, and RDS for
+                                    relational database management.</p>
                             </div>
                             <div class="phase">
                                 <h4>Serverless & Analytics</h4>
-                                <p>Lambda functions for serverless computing and Athena for SQL analytics on S3 data lakes.</p>
+                                <p>Lambda functions for serverless computing and Athena for SQL analytics on S3 data
+                                    lakes.</p>
                             </div>
                             <div class="phase">
                                 <h4>Management & Monitoring</h4>
-                                <p>CloudWatch for metrics and alarms, CloudTrail for audit logs, and CloudFormation/CDK for infrastructure automation.</p>
+                                <p>CloudWatch for metrics and alarms, CloudTrail for audit logs, and CloudFormation/CDK
+                                    for infrastructure automation.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="image-section">
-                    <h3>Image 1</h3>
-                    <div class="image-placeholder">Click to upload image 1</div>
+                    <h3>EC2</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-ec2.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
-                    <h3>Image 2</h3>
-                    <div class="image-placeholder">Click to upload image 2</div>
+                    <h3>VPC</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-vpc.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
-                    <h3>Image 3</h3>
-                    <div class="image-placeholder">Click to upload image 3</div>
+                    <h3>Lambda</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-lambda.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
-                    <h3>Image 4</h3>
-                    <div class="image-placeholder">Click to upload image 4</div>
+                    <h3>S3</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-s3.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
-                    <h3>Image 5</h3>
-                    <div class="image-placeholder">Click to upload image 5</div>
+                    <h3>RDS</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-RDS.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
+                <div class="image-section">
+                    <h3>CloudWatch</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-cloudwatch.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="image-section">
+                    <h3>CloudTrail</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-cloudtrial.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="image-section">
+                    <h3>Cloud</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-RDS.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
+                </div>
+
             </div>
 
 
-            
+
             <!-- Task 4 Page -->
             <div id="task4" class="page">
-                
 
-            <h2>Task 4 - Terraform Static Website & EC2 Dev Server</h2>
+
+                <h2>Task 4 - Terraform Static Website & EC2 Dev Server</h2>
 
                 <!-- Task Overview Section -->
                 <div class="task-overview">
                     <div class="overview-card">
                         <h3>🎯 Activity 1: Static Website on S3 - "ByteWave Solutions"</h3>
-                        <p>Host a static website using AWS S3 bucket via Terraform for ByteWave Solutions to showcase their services.</p>
+                        <p>Host a static website using AWS S3 bucket via Terraform for ByteWave Solutions to showcase
+                            their services.</p>
                     </div>
 
                     <div class="overview-card">
@@ -722,15 +837,18 @@
                             </div>
                             <div class="phase">
                                 <h4>Step 2: Enable Static Website Hosting</h4>
-                                <p>Configure the bucket for static hosting with <strong>index.html</strong> as the default file.</p>
+                                <p>Configure the bucket for static hosting with <strong>index.html</strong> as the
+                                    default file.</p>
                             </div>
                             <div class="phase">
                                 <h4>Step 3: Block Public Access Settings</h4>
-                                <p>Use <code>aws_s3_bucket_public_access_block</code> to block all public access settings initially.</p>
+                                <p>Use <code>aws_s3_bucket_public_access_block</code> to block all public access
+                                    settings initially.</p>
                             </div>
                             <div class="phase">
                                 <h4>Step 4: Attach Public Read Policy</h4>
-                                <p>Attach a bucket policy to allow public read access to <strong>index.html</strong>.</p>
+                                <p>Attach a bucket policy to allow public read access to <strong>index.html</strong>.
+                                </p>
                             </div>
                             <div class="phase">
                                 <h4>Step 5: Upload Index File</h4>
@@ -754,7 +872,8 @@
 
                     <div class="overview-card">
                         <h3>🎯 Activity 2: EC2 Dev Server with Python - "CloudNova Inc."</h3>
-                        <p>Provision a development EC2 instance for CloudNova Inc. with essential tools using Terraform.</p>
+                        <p>Provision a development EC2 instance for CloudNova Inc. with essential tools using Terraform.
+                        </p>
                     </div>
 
                     <div class="overview-card">
@@ -762,7 +881,8 @@
                         <div class="phases">
                             <div class="phase">
                                 <h4>Step 1: Launch EC2 Instance</h4>
-                                <p>Launch a <strong>t2.micro</strong> instance in <strong>us-east-1</strong> using Amazon Linux 2 AMI.</p>
+                                <p>Launch a <strong>t2.micro</strong> instance in <strong>us-east-1</strong> using
+                                    Amazon Linux 2 AMI.</p>
                             </div>
                             <div class="phase">
                                 <h4>Step 2: Configure Security Group</h4>
@@ -770,7 +890,8 @@
                             </div>
                             <div class="phase">
                                 <h4>Step 3: Install Packages via User Data</h4>
-                                <p>Use <strong>user_data</strong> script to install Python3 and Git automatically at launch.</p>
+                                <p>Use <strong>user_data</strong> script to install Python3 and Git automatically at
+                                    launch.</p>
                             </div>
                             <div class="phase">
                                 <h4>Step 4: Output Public IP</h4>
@@ -796,29 +917,60 @@
 
                 <!-- Image Sections -->
                 <div class="image-section">
-                    <h3>Image 1 (S3 Bucket Creation)</h3>
-                    <div class="image-placeholder">Click to upload image 1</div>
-                    <!-- <textarea class="text-area" placeholder="Write about image 1..."></textarea> -->
+                    <h3>EC2</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-ec2.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
-                    <h3>Image 2 (Bucket Policy)</h3>
-                    <div class="image-placeholder">Click to upload image 2</div>
-                    <!-- <textarea class="text-area" placeholder="Write about image 2..."></textarea> -->
+                    <h3>VPC</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-vpc.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
-                    <h3>Image 1 (EC2 Instance Launch)</h3>
-                    <div class="image-placeholder">Click to upload image 3</div>
-                    <!-- <textarea class="text-area" placeholder="Write about image 3..."></textarea> -->
+                    <h3>Lambda</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-lambda.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
-                    <h3>Image 2 (User Data Script Output)</h3>
-                    <div class="image-placeholder">Click to upload image 4</div>
-                    <!-- <textarea class="text-area" placeholder="Write about image 4..."></textarea> -->
+                    <h3>S3</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-s3.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
                 <div class="image-section">
-                    <h3>Image 3 (SSH Verification)</h3>
-                    <div class="image-placeholder">Click to upload image 5</div>
-                    <!-- <textarea class="text-area" placeholder="Write about image 5..."></textarea> -->
+                    <h3>RDS</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-RDS.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="image-section">
+                    <h3>CloudWatch</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-cloudwatch.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="image-section">
+                    <h3>CloudTrail</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-cloudtrial.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="image-section">
+                    <h3>CloudFormation</h3>
+                    <div class="image-placeholder">
+                        <img src="images/task3-cloudformation.png" alt="Task 1 - Image 1"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                    </div>
                 </div>
 
                 <!-- <h2>Task 4</h2>
@@ -848,35 +1000,28 @@
                     <textarea class="text-area" placeholder="Write about image 5..."></textarea>
                 </div>
             </div> -->
+            </div>
         </div>
-    </div>
 
-    <script>
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Remove active class from all buttons
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
+        <script>
+            function showPage(pageId) {
+                // Hide all pages
+                const pages = document.querySelectorAll('.page');
+                pages.forEach(page => page.classList.remove('active'));
 
-        // Add click functionality to image placeholders
-        document.addEventListener('DOMContentLoaded', function() {
-            const placeholders = document.querySelectorAll('.image-placeholder');
-            placeholders.forEach(placeholder => {
-                placeholder.addEventListener('click', function() {
-                    alert('Image upload functionality would be implemented here. In a real application, this would open a file picker.');
-                });
-            });
-        });
-    </script>
+                // Remove active class from all buttons
+                const buttons = document.querySelectorAll('.nav-btn');
+                buttons.forEach(btn => btn.classList.remove('active'));
+
+                // Show selected page
+                document.getElementById(pageId).classList.add('active');
+
+                // Add active class to clicked button
+                event.target.classList.add('active');
+            }
+
+
+        </script>
 </body>
+
 </html>
